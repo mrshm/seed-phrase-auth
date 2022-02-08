@@ -1,0 +1,17 @@
+# dotenv environment variables file
+.env
+
+# Dependency directories
+package-lock.json
+node_modules/
+
+# Test directories
+test/
+
+# Configs
+configs/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
