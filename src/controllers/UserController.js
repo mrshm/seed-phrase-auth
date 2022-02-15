@@ -82,20 +82,13 @@ class UserController {
 
     static async forgetUsername(req, res) {
         try {
-            console.log(req.body.phrase);
             let words = ""
             req.body.phrase.forEach(phrase => {
                 words = words + phrase
             });
 
-            console.log(words);
-            console.log(words.toString());
-
             const phrase = Encryption.SHA1(words.toString())
-            console.log(phrase);
             const user = await User.findOne({ phrase })
-
-            console.log(user);
 
             if (user) {
                 const token = await user.generateAuthToken()

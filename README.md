@@ -1,4 +1,4 @@
-# Seed Phrase Authenticating sample
+# Seed Phrase Authenticating
 This is just a simple project for seed phrase authentication and is not implemented properly.
 
 ## Available Scripts
@@ -26,5 +26,11 @@ MONGODB_DATABASE = seed-phrase-auth
 JWT_SECRET = some_secret_phrase
 ```
 
-## Docker file
+## Dockerfile
 You can build docker image of this project and database separately by executing Dockerfile in the project root and database directory.
+
+## API Document and Environment
+Project API and Environment for the Postman are in the docs directory and you can import them to the postman and use it.
+
+## Word Bucket
+In the beginning, you must add some words and save them in the database using `Add word API`, and the app will be using some random selection of those words to feed seed phrase functions.

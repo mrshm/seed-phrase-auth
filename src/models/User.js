@@ -71,12 +71,7 @@ userSchema.methods.generateSeedPhrase = async function () {
 		words = words + phrase.word
 	});
 
-	console.log(words);
-	console.log(words.toString());
-
 	const phrase = Encryption.SHA1(words.toString())
-
-	console.log(phrase);
 
 	user.phrase = phrase
 	await user.save()
