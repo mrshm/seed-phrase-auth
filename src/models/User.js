@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken')
 
 const Word = require('./Word')
 
+const Encryption = require('../utils/Encryption')
+
 const userSchema = new mongoose.Schema({
 	username: {
 		type: String,
@@ -69,7 +71,12 @@ userSchema.methods.generateSeedPhrase = async function () {
 		words = words + phrase.word
 	});
 
-	const phrase = jwt.sign({ phrase: words.toString() }, process.env.JWT_SECRET)
+	console.log(words);
+	console.log(words.toString());
+
+	const phrase = Encryption.SHA1(words.toString())
+
+	console.log(phrase);
 
 	user.phrase = phrase
 	await user.save()
